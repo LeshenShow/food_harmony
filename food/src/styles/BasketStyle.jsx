@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BasketStyled = styled.div`
+export const BasketSideStyled = styled.div`
   grid-area: b;
 `;
 export const BasketProductStyled = styled.div`
@@ -8,4 +8,7 @@ export const BasketProductStyled = styled.div`
   & span {
     margin-right: 10px;
   }
+`;
+export const BasketStyled = styled.div`
+  grid-area: m;
 `;

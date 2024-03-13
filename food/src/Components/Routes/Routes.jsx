@@ -1,8 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import CatFriends from "../../Tested";
-import { Category } from "../Category/Category";
+import { Category } from "../Content/Category";
 import { Login } from "../Login/Login";
 import { Basket } from "../Basket/Basket";
+import { Test2 } from "../../Tested2";
 
 export const RouteList = (props) => {
   let data = props.data;
@@ -36,8 +37,20 @@ export const RouteList = (props) => {
       />
       <Route path="/tested/*" element={<CatFriends />} />
       <Route path="/login/*" element={<Login />} />
-      <Route path="/basket/*" element={<Basket />} />
+      <Route
+        path="/basket/*"
+        element={
+          <Basket
+            basket={props.basket}
+            totalCost={props.totalCost}
+            addProduct={props.addProduct}
+            deleteQty={props.deleteQty}
+            deleteProduct={props.deleteProduct}
+          />
+        }
+      />
       <Route path={"/" && "*"} element={<Navigate to="/login" />} />
+      <Route path="/qqq/*" element={<Test2 />} />
     </Routes>
   );
 };

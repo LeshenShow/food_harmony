@@ -1,19 +1,24 @@
 import { NavLink } from "react-router-dom";
-import { BasketProductStyled, BasketStyled } from "../../styles/BasketStyle";
+import { BasketSideStyled } from "../../styles/BasketStyle";
+import { BasketProduct } from "./BasketProduct";
 
 export const BasketSide = (props) => {
-  let product = props.basket;
-
-  let test = product.map((elem) => {
-    console.log("Basket", product);
-    console.log("test map", elem.name);
-
-    return <BasketProduct product={elem} key={elem.id} />;
+  const product = props.basket;
+  const basketProduct = product.map((elem) => {
+    return (
+      <BasketProduct
+        product={elem}
+        key={elem.id}
+        addProduct={props.addProduct}
+        deleteQty={props.deleteQty}
+        deleteProduct={props.deleteProduct}
+      />
+    );
   });
   return (
-    <BasketStyled>
+    <BasketSideStyled>
       <span>Basket</span>
-      <div>{test}</div>
+      <div>{basketProduct}</div>
       {props.totalCost ? (
         <NavLink to="/basket">
           <span>Go to basket</span>
@@ -22,21 +27,6 @@ export const BasketSide = (props) => {
       ) : (
         <span>Empty</span>
       )}
-    </BasketStyled>
-  );
-};
-
-const BasketProduct = (props) => {
-  console.log("BasketProduct", props.product);
-  const name = props.product.name;
-  const qty = props.product.qty;
-  const cost = qty * props.product.price.currentPrice;
-
-  return (
-    <BasketProductStyled>
-      <span>{name},</span>
-      <span>{qty}шт</span>
-      <span>{cost} ₽</span>
-    </BasketProductStyled>
+    </BasketSideStyled>
   );
 };

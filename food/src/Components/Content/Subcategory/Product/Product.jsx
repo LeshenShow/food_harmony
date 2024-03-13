@@ -38,7 +38,7 @@ export const Product = (props) => {
 
         <s.ProductBuy
           onClick={() => {
-            console.log("test");
+            // console.log("test");
             props.addProduct(product);
           }}
         >
