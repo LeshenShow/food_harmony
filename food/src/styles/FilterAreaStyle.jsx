@@ -5,10 +5,13 @@ export const FilterAreaStyled = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  height: 50px;
+  height: 60px;
   position: sticky;
   top: 50px;
   background: white;
+  z-index: 10;
+  overflow-x: auto;
+  overflow-y: hidden;
 `;
 export const FilterAreaElementStyled = styled.div`
   display: flex;
@@ -27,5 +30,8 @@ export const FilterAreaElementStyled = styled.div`
   &.activeFilterSubcategory {
     background-color: #c189ce;
   }
-  /* &: active ${(props) => (props.color ? props.color : "red")}; */
+`;
+export const FilterAreaAddStyled = styled.div`
+  text-align: center;
+  margin: 10px;
 `;

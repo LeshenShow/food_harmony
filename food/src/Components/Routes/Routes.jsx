@@ -7,35 +7,45 @@ import { Test2 } from "../../Tested2";
 
 export const RouteList = (props) => {
   let data = props.data;
-  const getFilteredData = (data, filterValue) => {
+  let setRoutes = new Set();
+  data.map((elem) => setRoutes.add(elem.category.toLowerCase()));
+  setRoutes = Array.from(setRoutes);
+
+  const getFilteredData = (data, filterValue, isStocked) => {
     if (filterValue) {
       let filterData = data.filter(
-        (elem) => elem.category.toLowerCase() === filterValue
+        (elem) =>
+          elem.category.toLowerCase() === filterValue &&
+          (elem.stocked === isStocked || !isStocked)
       );
       return filterData;
     }
   };
+
+  const category = setRoutes.map((elem) => {
+    console.log(elem);
+    return (
+      <Route
+        key={elem}
+        path={`/goods/${elem}/*`}
+        element={
+          <Category
+            key={elem}
+            data={getFilteredData(data, elem, props.isStocked)}
+            addProduct={props.addProduct}
+            // onStockFilter={props.onStockFilter}
+            isStocked={props.isStocked}
+          />
+        }
+      />
+    );
+  });
+
   return (
     <Routes>
-      <Route
-        path="/vegetables/*"
-        element={
-          <Category
-            data={getFilteredData(data, "vegetables")}
-            addProduct={props.addProduct}
-          />
-        }
-      />
-      <Route
-        path="/fruits/*"
-        element={
-          <Category
-            data={getFilteredData(data, "fruits")}
-            addProduct={props.addProduct}
-          />
-        }
-      />
-      <Route path="/tested/*" element={<CatFriends />} />
+      {category}
+
+      {/* <Route path="/tested/*" element={<CatFriends />} /> */}
       <Route path="/login/*" element={<Login />} />
       <Route
         path="/basket/*"
@@ -46,6 +56,7 @@ export const RouteList = (props) => {
             addProduct={props.addProduct}
             deleteQty={props.deleteQty}
             deleteProduct={props.deleteProduct}
+            activeFilterCategory={props.activeFilterCategory}
           />
         }
       />

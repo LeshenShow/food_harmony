@@ -2,34 +2,40 @@ import { NavLink } from "react-router-dom";
 import {
   NavbarElementStyle,
   NavbarStyled,
-  NavbarTest,
+  NavbarAreaStyled,
 } from "../../styles/NavbarStyle";
-import { useState } from "react";
+import { OnStock } from "./../settings/OnStock";
 
 const Navbar = (props) => {
-  const [state, setState] = useState(null);
-  const handleClick = (e) => setState(e);
-
   let data = props.data;
   let category = new Set();
   data.map((elem) => category.add(elem.category));
   category = Array.from(category).map((elem) => {
-    let setActive = state === elem ? "activeFilterCategory" : null;
+    let setActive =
+      props.activeFilterCategory === elem ? "activeFilterCategory" : null;
     return (
-      <NavLink key={elem} to={elem} onClick={() => handleClick(elem)}>
+      <NavLink
+        key={elem}
+        to={`/goods/${elem.toLowerCase()}`}
+        onClick={() => props.activeFilter(elem)}
+      >
         <NavbarElementStyle className={setActive}>{elem}</NavbarElementStyle>
       </NavLink>
     );
   });
   return (
-    <NavbarTest>
+    <NavbarAreaStyled className="navbar">
       <NavbarStyled>
+        <OnStock
+          onStockFilter={props.onStockFilter}
+          isStocked={props.isStocked}
+        ></OnStock>
         {category}
         <NavLink to="/tested">
           <NavbarElementStyle>Tested</NavbarElementStyle>
         </NavLink>
       </NavbarStyled>
-    </NavbarTest>
+    </NavbarAreaStyled>
   );
 };
 export default Navbar;

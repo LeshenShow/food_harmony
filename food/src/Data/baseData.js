@@ -2,7 +2,7 @@ const getRandom = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export let data = [
+export const data = [
   {
     id: 0,
     category: "Fruits",
@@ -15,7 +15,17 @@ export let data = [
     name: "Apple Red",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/454328/apple-food-fruit.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/454328/apple-food-fruit.svg",
+      },
+      {
+        id: 1,
+        url: "https://www.svgrepo.com/show/429782/apple-apples-fruit.svg",
+      },
+      { id: 2, url: "https://www.svgrepo.com/show/475233/apple.svg" },
+    ],
   },
   {
     id: 1,
@@ -29,8 +39,20 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/454331/dragon-fruit-food-fruit.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/454331/dragon-fruit-food-fruit.svg",
+      },
+      {
+        id: 1,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+      {
+        id: 2,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 2,
@@ -44,8 +66,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 3,
@@ -59,8 +85,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 4,
@@ -74,8 +104,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 5,
@@ -89,8 +123,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 6,
@@ -104,8 +142,12 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 7,
@@ -119,8 +161,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 8,
@@ -134,8 +180,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 9,
@@ -149,8 +199,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 10,
@@ -164,8 +218,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 11,
@@ -179,8 +237,12 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 12,
@@ -194,8 +256,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 13,
@@ -209,8 +275,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 14,
@@ -224,8 +294,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 15,
@@ -239,8 +313,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 16,
@@ -254,8 +332,12 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 17,
@@ -269,8 +351,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 18,
@@ -284,8 +370,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 19,
@@ -299,8 +389,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 20,
@@ -314,8 +408,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 21,
@@ -329,8 +427,12 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 22,
@@ -344,8 +446,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 23,
@@ -359,8 +465,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 24,
@@ -374,8 +484,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 25,
@@ -389,8 +503,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 26,
@@ -404,8 +522,12 @@ export let data = [
     name: "Dragonfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 27,
@@ -419,8 +541,12 @@ export let data = [
     name: "Passionfruit",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 28,
@@ -434,8 +560,12 @@ export let data = [
     name: "Spinach",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 29,
@@ -449,8 +579,12 @@ export let data = [
     name: "Pumpkin",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 30,
@@ -464,8 +598,12 @@ export let data = [
     name: "Peas",
     weight: 80,
     measurement: "g",
-    imageSmall:
-      "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/424894/react-logo-programming.svg",
+      },
+    ],
   },
   {
     id: 31,
@@ -475,11 +613,16 @@ export let data = [
       currentPrice: getRandom(30, 60),
       initialPrice: getRandom(60, 150),
     },
-    stocked: true,
+    stocked: false,
     name: "Apple Orange",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/485333/apple.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/485333/apple.svg",
+      },
+    ],
   },
   {
     id: 33,
@@ -493,7 +636,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 34,
@@ -507,7 +655,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 35,
@@ -521,7 +674,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 36,
@@ -535,7 +693,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 37,
@@ -549,7 +712,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 38,
@@ -563,7 +731,12 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
   {
     id: 39,
@@ -577,6 +750,11 @@ export let data = [
     name: "Apple Green from Anne of Green Gables",
     weight: 80,
     measurement: "g",
-    imageSmall: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+    imagesSmall: [
+      {
+        id: 0,
+        url: "https://www.svgrepo.com/show/484758/apple-part-2.svg",
+      },
+    ],
   },
 ];

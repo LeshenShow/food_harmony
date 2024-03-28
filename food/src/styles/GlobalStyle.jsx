@@ -11,9 +11,11 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 body {
-  
   min-height: 100vh;
 }
 `;
@@ -21,10 +23,11 @@ body {
 export const FoodAppStyle = styled.div`
   display: grid;
   grid-template-areas:
-    "h h h h h h"
-    ". n . m . b "
-    ". n . m . b ";
+    "h h h h h h h"
+    ". . . m . . ."
+    ". n . m . b .";
   grid-template-rows: 50px 50px 1fr;
-  grid-template-columns: 10% 150px 1% 7fr 1% 30%;
+  grid-template-columns: 5% max-content 1% minmax(630px, 53%) 1% 1fr 1%;
+  /* grid-gap: 10px; */
   /* ${fontStyles}: 123 */
 `;

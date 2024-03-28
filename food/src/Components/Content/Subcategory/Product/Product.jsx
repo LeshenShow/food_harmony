@@ -1,18 +1,17 @@
 import * as s from "../../../../styles/ProductStyle";
 import { NavLink } from "react-router-dom";
+import { ProductSlider } from "./ProductSlider";
 export const Product = (props) => {
-  let product = props.product;
-  let currentPrice = product.price.currentPrice;
-  let initialPrice = product.price.initialPrice;
-  let discount = Math.ceil(100 - (currentPrice * 100) / initialPrice);
-  let priceAsKilogram = Math.ceil((currentPrice * 1000) / product.weight);
-  // addProduct={props.addProduct}
+  const product = props.product;
+  const currentPrice = product.price.currentPrice;
+  const initialPrice = product.price.initialPrice;
+  const discount = Math.ceil(100 - (currentPrice * 100) / initialPrice);
+  const priceAsKilogram = Math.ceil((currentPrice * 1000) / product.weight);
+  const isStockedClass = product.stocked ? "stocked" : "notStocked";
   return (
-    <s.Product>
+    <s.Product className={isStockedClass}>
       <NavLink>
-        <s.ProductImg>
-          <img src={product.imageSmall} alt="" />
-        </s.ProductImg>
+        <ProductSlider images={product.imagesSmall} />
         <s.ProductPrice>
           {discount > 0 ? ( // discount = 0 (false) if init = current
             <>
@@ -26,6 +25,9 @@ export const Product = (props) => {
         </s.ProductPrice>
         <s.ProductDescription>{product.name} </s.ProductDescription>
         <s.ProductWeight>
+          <span style={{ color: "red" }}>
+            {!product.stocked && "not stocked"}
+          </span>
           <span>
             {product.weight}
             {product.measurement}
@@ -42,7 +44,7 @@ export const Product = (props) => {
             props.addProduct(product);
           }}
         >
-          <span>Add in basket</span>
+          <span>Добавить в корзину</span>
         </s.ProductBuy>
       </NavLink>
     </s.Product>

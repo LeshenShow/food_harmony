@@ -5,26 +5,25 @@ export const Product = styled.div`
   margin: 5px;
   border-radius: 20px;
   &:hover {
-    background-color: #ece0aa;
+    background-color: #f1e8bf;
   }
   & a {
     display: grid;
-    grid-template-areas: "i" "p" "d" "w" "b";
+    grid-template-areas: "slider" "p" "d" "w" "b";
     grid-template-rows: 50% 10% auto 5% 10%;
     width: 200px;
     height: 400px;
     text-decoration: none;
     color: black;
   }
-`;
-export const ProductImg = styled.div`
-  grid-area: i;
-  border-radius: 20px 20px 0px 0px;
-  padding: 5px;
-  & img {
-    width: 100%;
+  &.notStocked {
+    background-color: lightgrey;
+    & button {
+      visibility: hidden;
+    }
   }
 `;
+
 export const ProductDescription = styled.div`
   grid-area: d;
   padding: 5px;

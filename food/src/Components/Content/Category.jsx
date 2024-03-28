@@ -27,7 +27,7 @@ export const Category = (props) => {
   let subcategoryHeaders = new Set();
   data.map((elem) => subcategoryHeaders.add(elem.subcategory));
   subcategoryHeaders = Array.from(subcategoryHeaders); //['Apples', 'Dragonfruites', 'Passionfruites']
-  let subcategory = subcategoryHeaders.map((header) => {
+  const subcategory = subcategoryHeaders.map((header) => {
     return (
       <Subcategory
         ref={(node) => {
@@ -45,8 +45,8 @@ export const Category = (props) => {
       />
     );
   });
-  let filterArea = subcategoryHeaders.map((elem) => {
-    let setActive = state === elem ? "activeFilterSubcategory" : null;
+  const filterArea = subcategoryHeaders.map((elem) => {
+    const setActive = state === elem ? "activeFilterSubcategory" : null;
     return (
       <FilterArea
         className={setActive}
@@ -59,8 +59,10 @@ export const Category = (props) => {
     );
   });
   return (
-    <CategoryStyled>
-      <FilterAreaStyled>{filterArea}</FilterAreaStyled>
+    <CategoryStyled className="main">
+      <FilterAreaStyled className="FilterAreaStyled">
+        {filterArea}
+      </FilterAreaStyled>
       <div>{subcategory}</div>
     </CategoryStyled>
   );

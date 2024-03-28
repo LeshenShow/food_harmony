@@ -1,19 +1,16 @@
 import styled, { createGlobalStyle, keyframes, css } from "styled-components";
-export const NavbarTest = styled.div`
+export const NavbarAreaStyled = styled.div`
   grid-area: n;
-  padding-top: 5px;
-  /* background-color: red; */
 `;
 export const NavbarStyled = styled.nav`
   background-color: #d3d3d375;
   /* grid-area: n; */
   display: flex;
   flex-direction: column;
-  /* position: fixed; */
   position: sticky;
   top: 100px;
   left: 10%;
-  width: 150px;
+  width: 200px;
   border-radius: 20px;
   & a {
     text-decoration: none;

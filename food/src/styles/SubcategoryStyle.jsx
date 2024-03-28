@@ -21,6 +21,6 @@ export const SubcategoryElementsStyled = styled.div`
 
 export const SubcategoryRefStyled = styled.div`
   position: relative;
-  top: -100px;
+  top: -110px;
   left: -500px;
 `;
