@@ -11,16 +11,20 @@ export const Subcategory = forwardRef((props, ref) => {
   let products = props.data
     .filter((product) => product.subcategory === props.header)
     .map((elem) => {
-      // console.log("product", elem, typeof elem);
       return (
-        <Product key={elem.id} product={elem} addProduct={props.addProduct} />
+        <Product
+          key={elem.id}
+          product={elem}
+          addProduct={props.addProduct}
+          setIsActiveModal={props.setIsActiveModal}
+          changeModalContent={props.changeModalContent}
+        />
       );
     });
   return (
     <div>
       <SubcategoryRefStyled ref={ref}></SubcategoryRefStyled>
       <SubcategoryStyled>{props.header}</SubcategoryStyled>
-
       <SubcategoryElementsStyled>{products}</SubcategoryElementsStyled>
     </div>
   );

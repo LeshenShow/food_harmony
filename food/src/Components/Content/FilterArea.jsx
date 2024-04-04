@@ -6,7 +6,7 @@ export const FilterArea = (props) => {
       className={props.className}
       onClick={() => {
         props.scrollToId(props.headersList);
-        props.doActive(props.headersList);
+        props.setIsActiveSubCat(props.headersList);
       }}
     >
       {props.headersList}

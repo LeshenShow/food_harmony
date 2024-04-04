@@ -7,14 +7,15 @@ export const Product = styled.div`
   &:hover {
     background-color: #f1e8bf;
   }
-  & a {
-    display: grid;
-    grid-template-areas: "slider" "p" "d" "w" "b";
-    grid-template-rows: 50% 10% auto 5% 10%;
-    width: 200px;
-    height: 400px;
-    text-decoration: none;
-    color: black;
+
+  display: grid;
+  grid-template-areas: "slider" "info" "buy";
+  grid-template-rows: 50% 40% 10%;
+  width: 200px;
+  height: 400px;
+  &.productModal {
+    width: 100%;
+    height: 100%;
   }
   &.notStocked {
     background-color: lightgrey;
@@ -23,54 +24,74 @@ export const Product = styled.div`
     }
   }
 `;
-
-export const ProductDescription = styled.div`
-  grid-area: d;
-  padding: 5px;
+export const ProductInfo = styled.div`
+  grid-area: info;
+  display: grid;
+  grid-template-areas: "price" "description" "weight";
+  grid-template-rows: 20% auto 10%;
   font-size: 100%;
+  cursor: pointer;
 `;
 export const ProductPrice = styled.div`
-  grid-area: p;
+  grid-area: price;
   display: flex;
   justify-content: space-evenly;
-  padding: 5px;
 `;
 export const CurrentPrice = styled.div`
-  grid-area: c;
-  font-size: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
   font-weight: 600;
   color: ${(props) => (props.color ? props.color : "red")};
+  &.productModal {
+    font-size: 2.2em;
+  }
 `;
 export const InitialPrice = styled.div`
-  grid-area: i;
-  font-size: 1.11em;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 1.1em;
   color: black;
   text-decoration: line-through;
+  &.productModal {
+    font-size: 1.8em;
+  }
 `;
 export const Discount = styled.div`
-  grid-area: d;
   display: flex;
+  flex-basis: 50px;
   align-items: center;
   justify-content: center;
   color: green;
   background-color: #d8f0d8;
   border: 2px solid green;
   border-radius: 50px 0px 50px 0px;
-  padding: 15px;
+  &.productModal {
+    font-size: 1.8em;
+    flex-basis: 100px;
+  }
+`;
+export const ProductDescription = styled.div`
+  grid-area: description;
+  padding: 5px;
+  font-size: 100%;
 `;
 export const ProductWeight = styled.div`
-  grid-area: w;
+  grid-area: weight;
   display: flex;
   justify-content: end;
   align-items: center;
   font-style: italic;
   font-size: 0.8em;
+  padding-bottom: 3px;
   & span {
     margin-right: 5px;
   }
 `;
 export const ProductBuy = styled.button`
-  grid-area: b;
+  grid-area: buy;
   border: 0px;
   margin: 0px;
   padding: 0px;

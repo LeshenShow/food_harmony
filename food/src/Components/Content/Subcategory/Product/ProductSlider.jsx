@@ -26,7 +26,7 @@ export const ProductSlider = (props) => {
   return (
     <s.ProductSlider>
       <Arrows text="<" changeNumber={changeNumber} value={-1} qty={qty} />
-      <s.ProductSlides>
+      <s.ProductSlides className={props.isModal}>
         {slides}
         <Dots qty={qty} dotsChange={dotsChange} number={number} />
       </s.ProductSlides>
@@ -37,7 +37,6 @@ export const ProductSlider = (props) => {
 
 export const Slides = (props) => {
   let visible = props.id === props.number ? "" : "none";
-  // console.log("slides", props.id, props.number);
   return <img src={props.src} alt="" style={{ display: visible }} />;
 };
 

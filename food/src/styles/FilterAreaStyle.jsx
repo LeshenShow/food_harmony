@@ -9,7 +9,7 @@ export const FilterAreaStyled = styled.div`
   position: sticky;
   top: 50px;
   background: white;
-  z-index: 10;
+  /* z-index: 10; */
   overflow-x: auto;
   overflow-y: hidden;
 `;

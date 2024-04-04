@@ -15,16 +15,18 @@ export const EmptyBasket = (props) => {
 export const FillBasket = (props) => {
   return (
     <NavLink to="/basket">
-      {/* <a> */}
-      <div>
-        {/* <div onClick={() => props.testfunc()}> */}
-        Перейти к оплате {props.totalCost} ₽
+      <div className="fillBasket">
+        <span>Перейти к оплате </span>
+        <span>{props.totalCost}</span>
+        {props.totalCost !== props.initialCost && (
+          <span className="initialCost">{props.initialCost}</span>
+        )}
+        <span>₽</span>
         <img
           src="https://www.svgrepo.com/show/533592/arrow-narrow-circle-broken-down.svg"
           alt=""
-        ></img>
+        />
       </div>
-      {/* </a> */}
     </NavLink>
   );
 };

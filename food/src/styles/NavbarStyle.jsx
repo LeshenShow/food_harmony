@@ -34,5 +34,5 @@ export const NavbarElementStyle = styled.div`
   &:hover {
     background-color: #df9dd6;
   }
-  z-index: 10;
+  /* z-index: 10; */
 `;

@@ -7,7 +7,7 @@ export const OnStock = (props) => {
           type="checkbox"
           checked={props.isStocked}
           onChange={() => {
-            props.onStockFilter(!props.isStocked);
+            props.setIsStocked(!props.isStocked);
           }}
         />
         Только в наличии

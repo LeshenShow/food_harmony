@@ -13,14 +13,15 @@ export const App = (props) => {
       <Header />
       <Navbar
         data={props.data}
-        onStockFilter={props.onStockFilter}
         isStocked={props.isStocked}
-        activeFilterCategory={props.activeFilterCategory}
-        activeFilter={props.activeFilter}
+        setIsStocked={props.setIsStocked}
+        activeCategory={props.activeCategory}
+        setActiveCategory={props.setActiveCategory}
       />
       <BasketSide
         basket={props.basket}
         totalCost={props.totalCost}
+        initialCost={props.initialCost}
         addProduct={props.addProduct}
         deleteQty={props.deleteQty}
         deleteProduct={props.deleteProduct}
@@ -29,12 +30,13 @@ export const App = (props) => {
         data={props.data}
         basket={props.basket}
         totalCost={props.totalCost}
+        initialCost={props.initialCost}
         addProduct={props.addProduct}
         deleteQty={props.deleteQty}
         deleteProduct={props.deleteProduct}
-        onStockFilter={props.onStockFilter}
         isStocked={props.isStocked}
-        activeFilterCategory={props.activeFilterCategory}
+        setIsStocked={props.setIsStocked}
+        activeCategory={props.activeCategory}
       />
     </FoodAppStyle>
   );

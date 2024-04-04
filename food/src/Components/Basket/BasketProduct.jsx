@@ -12,7 +12,7 @@ export const BasketProduct = (props) => {
   const initialCost = qty * initialPrice;
   const deleteQty = () => props.deleteQty(product);
   const addProduct = () => props.addProduct(product);
-  const deleteProduct = () => props.deleteProduct(id, currentCost);
+  const deleteProduct = () => props.deleteProduct(id, currentCost, initialCost);
   return (
     <BasketProductStyled>
       <div>

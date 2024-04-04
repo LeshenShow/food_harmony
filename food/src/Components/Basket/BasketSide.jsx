@@ -1,14 +1,8 @@
-import { useState } from "react";
 import { BasketSideStyled } from "../../styles/BasketStyle";
-import { EmptyBasket, FillBasket } from "../settings/BasketState";
 import { BasketProduct } from "./BasketProduct";
+import { EmptyBasket, FillBasket } from "./BasketState";
 
 export const BasketSide = (props) => {
-  // const [isHidden, setIsHidden] = useState();
-  // const handleClick = () => setIsHidden("isHidden");
-  // const [test, setTest] = useState("b");
-  // const testfunc = () => setTest("m");
-
   const product = props.basket;
   const basketProduct = product.map((elem) => {
     return (
@@ -27,8 +21,7 @@ export const BasketSide = (props) => {
         {props.totalCost ? (
           <FillBasket
             totalCost={props.totalCost}
-            // handleClick={handleClick}
-            // testfunc={testfunc}
+            initialCost={props.initialCost}
           />
         ) : (
           <EmptyBasket />
@@ -37,20 +30,4 @@ export const BasketSide = (props) => {
       </div>
     </BasketSideStyled>
   );
-  // return (
-  //   <BasketSideStyled className="basket" grid={test}>
-  //     <div className={isHidden}>
-  //       {props.totalCost ? (
-  //         <FillBasket
-  //           totalCost={props.totalCost}
-  //           handleClick={handleClick}
-  //           testfunc={testfunc}
-  //         />
-  //       ) : (
-  //         <EmptyBasket />
-  //       )}
-  //       <div>{basketProduct}</div>
-  //     </div>
-  //   </BasketSideStyled>
-  // );
 };

@@ -5,27 +5,33 @@ export const ProductSlider = styled.div`
   border-radius: 20px 20px 0px 0px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  & div > img {
-    width: 150px;
-  }
+  padding-top: 10px;
 `;
 export const ProductArrows = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: 20px;
-  height: 80%;
+  height: 100%;
   border-radius: 10px;
   &:hover {
     background-color: lightgray;
   }
 `;
-export const ProductSlides = styled.div``;
+export const ProductSlides = styled.div`
+  & > img {
+    height: 150px;
+  }
+  &.productModal img {
+    height: 300px;
+  }
+`;
 export const ProductDots = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   & > div {
     background-color: lightgray;
     width: 10px;

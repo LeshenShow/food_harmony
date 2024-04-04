@@ -1,37 +1,18 @@
 import { CategoryStyled } from "../../styles/CategoryStyle";
 import { FilterAreaStyled } from "../../styles/FilterAreaStyle";
 import { FilterArea } from "./FilterArea";
+import { Modal } from "./Subcategory/Product/ProductModal";
 import { Subcategory } from "./Subcategory/Subcategory";
-import { useRef, useState } from "react";
 
 export const Category = (props) => {
-  const [state, setState] = useState(null);
-  const handleClick = (e) => setState(e);
-
-  const headerRef = useRef(null);
-  const scrollToId = (id) => {
-    const map = getMap();
-    const node = map.get(id);
-    node.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-  const getMap = () => {
-    if (!headerRef.current) {
-      headerRef.current = new Map();
-    }
-    return headerRef.current;
-  };
-
-  const data = props.data; // [ {id:3,...}, {id:4,...}, ]
   let subcategoryHeaders = new Set();
-  data.map((elem) => subcategoryHeaders.add(elem.subcategory));
+  props.data.map((elem) => subcategoryHeaders.add(elem.subcategory));
   subcategoryHeaders = Array.from(subcategoryHeaders); //['Apples', 'Dragonfruites', 'Passionfruites']
   const subcategory = subcategoryHeaders.map((header) => {
     return (
       <Subcategory
         ref={(node) => {
-          const map = getMap();
+          const map = props.getMap();
           if (node) {
             map.set(header, node);
           } else {
@@ -39,30 +20,42 @@ export const Category = (props) => {
           }
         }}
         header={header}
-        data={data}
+        data={props.data}
         key={header}
         addProduct={props.addProduct}
+        setIsActiveModal={props.setIsActiveModal}
+        changeModalContent={props.changeModalContent}
       />
     );
   });
   const filterArea = subcategoryHeaders.map((elem) => {
-    const setActive = state === elem ? "activeFilterSubcategory" : null;
+    const setActive =
+      props.isActiveSubCat === elem ? "activeFilterSubcategory" : null;
     return (
       <FilterArea
         className={setActive}
         key={elem}
         headersList={elem}
-        scrollToId={scrollToId}
-        doActive={handleClick}
-        state={state}
+        scrollToId={props.scrollToId}
+        setIsActiveSubCat={props.setIsActiveSubCat}
+        state={props.state}
       />
     );
   });
   return (
-    <CategoryStyled className="main">
+    <CategoryStyled className="main" id="mainContent">
       <FilterAreaStyled className="FilterAreaStyled">
         {filterArea}
       </FilterAreaStyled>
+      <div>
+        {props.isActiveModal ? (
+          <Modal
+            setIsActiveModal={props.setIsActiveModal}
+            modalContent={props.modalContent}
+            addProduct={props.addProduct}
+          />
+        ) : null}
+      </div>
       <div>{subcategory}</div>
     </CategoryStyled>
   );

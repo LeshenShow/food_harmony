@@ -1,5 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { BasketStyled } from "../../styles/BasketStyle";
+import {
+  BasketBackgroundStyled,
+  BasketContentStyled,
+  BasketStyled,
+} from "../../styles/BasketStyle";
 import { BasketProduct } from "./BasketProduct";
 
 export const Basket = (props) => {
@@ -20,13 +24,20 @@ export const Basket = (props) => {
   let cost = props.totalCost;
   return (
     <BasketStyled>
-      <span>
-        <NavLink to={`/goods/${props.activeFilterCategory}`}>
-          Продолжить покупки
-        </NavLink>
-      </span>
-      <span>{basketProduct}</span>
-      <span>To payment:{cost}</span>
+      <BasketBackgroundStyled></BasketBackgroundStyled>
+      <BasketContentStyled>
+        <div>
+          <NavLink to={`/goods/${props.activeCategory}`}>
+            Продолжить покупки
+          </NavLink>
+        </div>
+        <div>{basketProduct}</div>
+        <button>
+          <NavLink to={`/payment/*`}>
+            <div>To payment:{cost}</div>
+          </NavLink>
+        </button>
+      </BasketContentStyled>
     </BasketStyled>
   );
 };

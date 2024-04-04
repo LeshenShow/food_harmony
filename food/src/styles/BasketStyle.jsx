@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const BasketSideStyled = styled.div`
   grid-area: b;
   /* grid-area: ${(props) => props.grid}; */
-  & .isHidden {
-    /* visibility: hidden; */
-  }
   & > div {
     display: flex;
     flex-direction: column;
@@ -53,19 +50,42 @@ export const BasketSideStyled = styled.div`
       margin-bottom: 50px;
     }
   }
+  & .fillBasket {
+    & > span {
+      margin-right: 5px;
+    }
+    & .initialCost {
+      text-decoration: line-through;
+      font-style: italic;
+    }
+  }
 `;
 export const BasketProductStyled = styled.div`
-  /* display: flex;
-  justify-content: start; */
   text-align: start;
   margin: 5px;
   padding: 5px;
   border-radius: 20px;
   background-color: pink;
-  & > span {
+
+  & span {
     margin-right: 5px;
   }
 `;
 export const BasketStyled = styled.div`
   grid-area: m;
+`;
+export const BasketBackgroundStyled = styled.div`
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  top: 5%;
+  left: 0%;
+`;
+export const BasketContentStyled = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  top: 10%;
+  left: 10%;
 `;
