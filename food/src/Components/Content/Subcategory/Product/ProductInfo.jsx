@@ -11,7 +11,7 @@ export const ProductInfo = (props) => {
       onClick={() => {
         if (props.isModal !== "productModal") {
           props.setIsActiveModal(true);
-          props.changeModalContent(props.product);
+          props.setModalContent(props.product);
         }
       }}
     >

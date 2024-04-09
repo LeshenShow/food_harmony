@@ -46,6 +46,8 @@ export const AppState = (props) => {
   const [isStocked, setIsStocked] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
 
+  const [isActiveModal, setIsActiveModal] = useState(false);
+  const [modalContent, setModalContent] = useState();
   return (
     <App
       data={props.data}
@@ -59,6 +61,10 @@ export const AppState = (props) => {
       addProduct={addProduct}
       deleteQty={deleteQty}
       deleteProduct={deleteProduct}
+      isActiveModal={isActiveModal}
+      setIsActiveModal={setIsActiveModal}
+      modalContent={modalContent}
+      setModalContent={setModalContent}
     />
   );
 };

@@ -30,4 +30,8 @@ export const FoodAppStyle = styled.div`
   grid-template-columns: 5% max-content 1% minmax(630px, 53%) 1% 1fr 1%;
   /* grid-gap: 10px; */
   /* ${fontStyles}: 123 */
+  @media screen and (min-width: 800px) and (max-width: 1324px) {
+    grid-template-rows: 50px 50px 1fr;
+    grid-template-columns: 0% max-content 0% minmax(630px, 53%) 0% 1fr 0%;
+  }
 `;

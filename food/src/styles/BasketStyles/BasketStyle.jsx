@@ -7,6 +7,7 @@ export const BasketSideStyled = styled.div`
     display: flex;
     flex-direction: column;
     max-height: 80vh;
+    min-width: 350px;
     overflow-y: auto;
     background-color: #f0e9e9;
     position: sticky;

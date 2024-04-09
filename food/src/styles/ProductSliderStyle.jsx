@@ -12,19 +12,26 @@ export const ProductArrows = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 20px;
+  width: 10%;
   height: 100%;
   border-radius: 10px;
   &:hover {
     background-color: lightgray;
+    color: lightgrey;
   }
 `;
 export const ProductSlides = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
   & > img {
-    height: 150px;
+    height: 200px;
+    width: 150px;
   }
   &.productModal img {
-    height: 300px;
+    height: 400px;
+    width: 300px;
   }
 `;
 export const ProductDots = styled.div`

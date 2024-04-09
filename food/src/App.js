@@ -10,7 +10,13 @@ import { BasketSide } from "./Components/Basket/BasketSide";
 export const App = (props) => {
   return (
     <FoodAppStyle>
-      <Header />
+      <Header
+        data={props.data}
+        setIsActiveModal={props.setIsActiveModal}
+        setModalContent={props.setModalContent}
+        modalContent={props.modalContent}
+        addProduct={props.addProduct}
+      />
       <Navbar
         data={props.data}
         isStocked={props.isStocked}
@@ -37,6 +43,10 @@ export const App = (props) => {
         isStocked={props.isStocked}
         setIsStocked={props.setIsStocked}
         activeCategory={props.activeCategory}
+        isActiveModal={props.isActiveModal}
+        setIsActiveModal={props.setIsActiveModal}
+        modalContent={props.modalContent}
+        setModalContent={props.setModalContent}
       />
     </FoodAppStyle>
   );

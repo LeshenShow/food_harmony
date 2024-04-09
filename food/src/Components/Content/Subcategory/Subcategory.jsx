@@ -17,7 +17,7 @@ export const Subcategory = forwardRef((props, ref) => {
           product={elem}
           addProduct={props.addProduct}
           setIsActiveModal={props.setIsActiveModal}
-          changeModalContent={props.changeModalContent}
+          setModalContent={props.setModalContent}
         />
       );
     });

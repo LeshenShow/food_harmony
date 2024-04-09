@@ -19,11 +19,6 @@ export const CategoryState = (props) => {
     return headerRef.current;
   };
 
-  const [isActiveModal, setIsActiveModal] = useState(false);
-  const [modalContent, setModalContent] = useState();
-  const changeModalContent = (product) => {
-    setModalContent(product);
-  };
   return (
     <>
       <Category
@@ -31,10 +26,10 @@ export const CategoryState = (props) => {
         data={props.data}
         getMap={getMap}
         scrollToId={scrollToId}
-        isActiveModal={isActiveModal}
-        setIsActiveModal={setIsActiveModal}
-        modalContent={modalContent}
-        changeModalContent={changeModalContent}
+        isActiveModal={props.isActiveModal}
+        setIsActiveModal={props.setIsActiveModal}
+        modalContent={props.modalContent}
+        setModalContent={props.setModalContent}
         addProduct={props.addProduct}
         isActiveSubCat={isActiveSubCat}
         setIsActiveSubCat={setIsActiveSubCat}

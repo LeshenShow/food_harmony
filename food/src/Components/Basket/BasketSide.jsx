@@ -1,4 +1,4 @@
-import { BasketSideStyled } from "../../styles/BasketStyle";
+import { BasketSideStyled } from "../../styles/BasketStyles/BasketStyle";
 import { BasketProduct } from "./BasketProduct";
 import { EmptyBasket, FillBasket } from "./BasketState";
 

@@ -1,7 +1,7 @@
 import { CategoryStyled } from "../../styles/CategoryStyle";
 import { FilterAreaStyled } from "../../styles/FilterAreaStyle";
 import { FilterArea } from "./FilterArea";
-import { Modal } from "./Subcategory/Product/ProductModal";
+import { ProductModal } from "./Subcategory/Product/ProductModal";
 import { Subcategory } from "./Subcategory/Subcategory";
 
 export const Category = (props) => {
@@ -13,6 +13,7 @@ export const Category = (props) => {
       <Subcategory
         ref={(node) => {
           const map = props.getMap();
+          console.log(node);
           if (node) {
             map.set(header, node);
           } else {
@@ -24,7 +25,7 @@ export const Category = (props) => {
         key={header}
         addProduct={props.addProduct}
         setIsActiveModal={props.setIsActiveModal}
-        changeModalContent={props.changeModalContent}
+        setModalContent={props.setModalContent}
       />
     );
   });
@@ -49,7 +50,7 @@ export const Category = (props) => {
       </FilterAreaStyled>
       <div>
         {props.isActiveModal ? (
-          <Modal
+          <ProductModal
             setIsActiveModal={props.setIsActiveModal}
             modalContent={props.modalContent}
             addProduct={props.addProduct}

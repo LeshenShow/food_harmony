@@ -7,7 +7,6 @@ export const Product = styled.div`
   &:hover {
     background-color: #f1e8bf;
   }
-
   display: grid;
   grid-template-areas: "slider" "info" "buy";
   grid-template-rows: 50% 40% 10%;

@@ -12,6 +12,7 @@ export const NavbarStyled = styled.nav`
   left: 10%;
   width: 200px;
   border-radius: 20px;
+
   & a {
     text-decoration: none;
     color: black;
@@ -34,5 +35,4 @@ export const NavbarElementStyle = styled.div`
   &:hover {
     background-color: #df9dd6;
   }
-  /* z-index: 10; */
 `;

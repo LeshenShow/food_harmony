@@ -3,7 +3,7 @@ import {
   BasketBackgroundStyled,
   BasketContentStyled,
   BasketStyled,
-} from "../../styles/BasketStyle";
+} from "../../styles/BasketStyles/BasketStyle";
 import { BasketProduct } from "./BasketProduct";
 
 export const Basket = (props) => {

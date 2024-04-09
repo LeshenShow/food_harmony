@@ -1,4 +1,4 @@
-import { BasketProductStyled } from "../../styles/BasketStyle";
+import { BasketProductStyled } from "../../styles/BasketStyles/BasketStyle";
 
 export const BasketProduct = (props) => {
   // console.log("BasketProduct", props.product);

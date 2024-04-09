@@ -13,7 +13,7 @@ export const Product = (props) => {
       />
       <ProductInfo
         setIsActiveModal={props.setIsActiveModal}
-        changeModalContent={props.changeModalContent}
+        setModalContent={props.setModalContent}
         product={props.product}
         isModal={`${isModal}`}
       />

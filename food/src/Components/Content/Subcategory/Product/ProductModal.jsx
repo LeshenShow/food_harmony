@@ -1,25 +1,25 @@
 import {
-  ModalBackgroundStyled,
-  ModalContentStyled,
-  ModalStyled,
-} from "../../../../styles/ModalStyle";
+  ProductModalBackgroundStyled,
+  ProductModalContentStyled,
+  ProductModalStyled,
+} from "../../../../styles/ProductModalStyle";
 import { Product } from "./Product";
 
-export const Modal = (props) => {
+export const ProductModal = (props) => {
   return (
-    <ModalStyled>
-      <ModalBackgroundStyled
+    <ProductModalStyled>
+      <ProductModalBackgroundStyled
         onClick={() => {
           props.setIsActiveModal(false);
         }}
-      ></ModalBackgroundStyled>
-      <ModalContentStyled>
+      ></ProductModalBackgroundStyled>
+      <ProductModalContentStyled>
         <Product
           product={props.modalContent}
           addProduct={props.addProduct}
           isModal={true}
         />
-      </ModalContentStyled>
-    </ModalStyled>
+      </ProductModalContentStyled>
+    </ProductModalStyled>
   );
 };

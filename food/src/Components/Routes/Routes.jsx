@@ -25,7 +25,7 @@ export const RouteList = (props) => {
   };
 
   const category = setRoutes.map((elem) => {
-    console.log(elem);
+    // console.log(elem);
     return (
       <Route
         key={elem}
@@ -36,6 +36,10 @@ export const RouteList = (props) => {
             data={getFilteredData(data, elem, props.isStocked)}
             addProduct={props.addProduct}
             isStocked={props.isStocked}
+            isActiveModal={props.isActiveModal}
+            setIsActiveModal={props.setIsActiveModal}
+            modalContent={props.modalContent}
+            setModalContent={props.setModalContent}
           />
         }
       />
